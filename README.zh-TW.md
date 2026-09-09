@@ -48,7 +48,7 @@ clone 後，倉庫會位於 `~/.agents/skills/ok-skills`，其內部目錄已符
   ...
 ```
 
-Claude Code 或 Codex 的全域指令可以從 [`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.md) 開始，然後複製或合併到 Claude Code 的 `CLAUDE.md` 或 Codex 的 `AGENTS.md`。它內建中文優先、KISS、最新文件/原始碼檢查、多 agent 優先、預設啟用 `caveman` / `planning-with-files` / `karpathy-guidelines`、嚴格 TypeScript 約束和 context-mode 路由規則。復用前請按專案編輯 `语言要求` 小節；`其他注意项` 是專案本地設定，可按需編輯。
+Claude Code 或 Codex 的全域指令可以從 [`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.md) 開始，然後複製或合併到 Claude Code 的 `CLAUDE.md` 或 Codex 的 `AGENTS.md`。它內建中文優先、KISS、最新文件/原始碼檢查、多 agent 優先、預設啟用 `planning-with-files` / `karpathy-guidelines`、嚴格 TypeScript 約束和 context-mode 路由規則。復用前請按專案編輯 `语言要求` 小節；`其他注意项` 是專案本地設定，可按需編輯。
 
 接著在 `AGENTS.md` 裡加入最小觸發規則，或把同樣的 skill 觸發規則合併進 `CLAUDE.md` / `AGENTS.md`：
 
@@ -138,7 +138,6 @@ Claude Code 或 Codex 的全域指令可以從 [`CLAUDE_AGENTS.md`](CLAUDE_AGENT
 | [better-icons](better-icons/SKILL.md)                               | 透過 CLI 或 MCP 工具搜尋 200+ Iconify 圖示庫並取得 SVG 圖示。                                                                                  | [better-auth/better-icons](https://github.com/better-auth/better-icons/tree/main/skills)                                       |
 | [kimi-webbridge](kimi-webbridge/SKILL.md)                           | 透過本機守護行程控制使用者的真實瀏覽器，用於導覽、表單填寫、截圖、頁面讀取和登入狀態工作階段。                                                | [install.sh](https://cdn.kimi.com/webbridge/install.sh)                                                             |
 | [browser-trace](browser-trace/SKILL.md)                             | 擷取瀏覽器自動化除錯所需的 CDP trace、截圖與 DOM dump。                                                                                    | [browserbase/skills](https://github.com/browserbase/skills/tree/main/skills/browser-trace)                                     |
-| [caveman](caveman/SKILL.md)                                         | 用「穴居人」式極簡表達壓縮回覆 tokens，同時保留完整技術準確性，並支援多段強度。                                                                | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman/tree/main/skills/caveman)                                            |
 | [diagnosing-bugs](diagnosing-bugs/SKILL.md)                                   | 面向疑難 bug 與效能回歸的嚴格診斷迴圈。                                                                                     | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/diagnosing-bugs)                                |
 | [deep-research](deep-research/SKILL.md)                                       | 生成專業深度調研報告，支援多 agent 並行寫作、最新資料錨定、多語言輸出與內建品質檢查。                                      | [hoolulu/deep-research](https://github.com/hoolulu/deep-research/tree/main)                                                        |
 | [diagram-design](diagram-design/SKILL.md)                           | 把 39 種圖做成可獨立開啟的 HTML/SVG/PNG 編輯級示意圖；支援重繪 draw.io / Mermaid。                                                               | [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design/tree/main/skills/diagram-design)                 |

@@ -48,7 +48,7 @@ clone 後、リポジトリは `~/.agents/skills/ok-skills` に配置され、�
   ...
 ```
 
-Claude Code または Codex のグローバル指示は [`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.md) から始め、Claude Code の `CLAUDE.md` または Codex の `AGENTS.md` にコピー / マージできます。Chinese-first、KISS、最新ドキュメント / ソース確認、multi-agent 優先、`caveman` / `planning-with-files` / `karpathy-guidelines` のデフォルト有効化、厳格な TypeScript ルール、context-mode ルーティングをまとめた agent playbook です。再利用する前に `语言要求` セクションをプロジェクト向けに編集してください。`其他注意项` セクションはプロジェクトローカルな設定として必要に応じて編集できます。
+Claude Code または Codex のグローバル指示は [`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.md) から始め、Claude Code の `CLAUDE.md` または Codex の `AGENTS.md` にコピー / マージできます。Chinese-first、KISS、最新ドキュメント / ソース確認、multi-agent 優先、`planning-with-files` / `karpathy-guidelines` のデフォルト有効化、厳格な TypeScript ルール、context-mode ルーティングをまとめた agent playbook です。再利用する前に `语言要求` セクションをプロジェクト向けに編集してください。`其他注意项` セクションはプロジェクトローカルな設定として必要に応じて編集できます。
 
 次に `AGENTS.md` に最小限の trigger rules を追加するか、同じ skill trigger を `CLAUDE.md` / `AGENTS.md` に統合します。
 
@@ -139,7 +139,6 @@ Claude Code または Codex のグローバル指示は [`CLAUDE_AGENTS.md`](CLA
 | [better-icons](better-icons/SKILL.md)                               | CLI または MCP ツールで 200 以上の Iconify ライブラリを検索し、SVG アイコンを取得する。                                                                                                       | [better-auth/better-icons](https://github.com/better-auth/better-icons/tree/main/skills)                                       |
 | [kimi-webbridge](kimi-webbridge/SKILL.md)                           | ローカルデーモン経由でユーザーの実ブラウザを操作し、ナビゲーション、フォーム入力、スクリーンショット、ページ読解、ログイン済みセッションに対応します。                                      | [install.sh](https://cdn.kimi.com/webbridge/install.sh)                                                             |
 | [browser-trace](browser-trace/SKILL.md)                             | ブラウザ自動化デバッグ用に CDP trace、スクリーンショット、DOM dump を取得する。                                                                                       | [browserbase/skills](https://github.com/browserbase/skills/tree/main/skills/browser-trace)                                     |
-| [caveman](caveman/SKILL.md)                                         | 技術的な正確性を保ったまま、洞穴人風の超短文で応答トークンを削減する。                                                                          | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman/tree/main/skills/caveman)                                            |
 | [diagnosing-bugs](diagnosing-bugs/SKILL.md)                                   | hard bug と performance regression のための規律ある診断ループ。                                                                                   | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/diagnosing-bugs)                                |
 | [deep-research](deep-research/SKILL.md)                                       | マルチエージェント並列執筆、最新データの対象化、多言語出力、品質チェックを備えた専門的な深層調査レポート生成。                                      | [hoolulu/deep-research](https://github.com/hoolulu/deep-research/tree/main)                                                        |
 | [diagram-design](diagram-design/SKILL.md)                           | 39 種の図を単体 HTML/SVG/PNG の編集品質ダイアグラムとして作成。draw.io / Mermaid の再描画にも対応。                                                               | [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design/tree/main/skills/diagram-design)                 |

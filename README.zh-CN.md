@@ -6,7 +6,7 @@
 
 这是一个面向 Codex、Claude Code、Cursor、OpenClaw、Autohand Code、Trae 以及其他兼容 `SKILL.md` / `CLAUDE.md` / `AGENTS.md` 工作流工具的技能仓库。
 
-当前仓库共收录 **31 个可复用技能**，全部作为顶层技能目录由本仓直接维护。把它 clone 到 `~/.agents/skills/ok-skills` 即可，仓库内部目录已经符合 `AGENTS.md` 所需的 skills 规范，[`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.md) 则提供面向 Claude Code 的 agent playbook。
+当前仓库共收录 **30 个可复用技能**，全部作为顶层技能目录由本仓直接维护。把它 clone 到 `~/.agents/skills/ok-skills` 即可，仓库内部目录已经符合 `AGENTS.md` 所需的 skills 规范，[`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.md) 则提供面向 Claude Code 的 agent playbook。
 
 如果你在找 **Codex skills**、**Claude Code skills**、**Cursor skills**、**OpenClaw skills**、可复用的 **CLAUDE.md / AGENTS.md** 模板，或者一套能直接落地的 **SKILL.md** 示例仓库，这个项目就是为搜索可发现性和开箱即用而整理的。
 
@@ -60,7 +60,7 @@ clone 后仓库位于 `~/.agents/skills/ok-skills`，其内部目录已经符合
   ...
 ```
 
-Claude Code 或 Codex 的全局指令可以从 [`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.md) 开始，然后复制或合并到 Claude Code 的 `CLAUDE.md` 或 Codex 的 `AGENTS.md`。它内置中文优先、KISS、最新文档/源码检查、多 agent 优先、默认启用 `caveman` / `planning-with-files` / `karpathy-guidelines`、严格 TypeScript 约束和 context-mode 路由规则。复用前请按项目编辑 `语言要求` 小节；`其他注意项` 是项目本地配置，可按需编辑。
+Claude Code 或 Codex 的全局指令可以从 [`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.md) 开始，然后复制或合并到 Claude Code 的 `CLAUDE.md` 或 Codex 的 `AGENTS.md`。它内置中文优先、KISS、最新文档/源码检查、多 agent 优先、默认启用 `planning-with-files` / `karpathy-guidelines`、严格 TypeScript 约束和 context-mode 路由规则。复用前请按项目编辑 `语言要求` 小节；`其他注意项` 是项目本地配置，可按需编辑。
 
 然后在 `AGENTS.md` 里加最小触发规则，或把同样的 skill 触发规则合并进 `CLAUDE.md` / `AGENTS.md`：
 
@@ -151,7 +151,6 @@ Claude Code 或 Codex 的全局指令可以从 [`CLAUDE_AGENTS.md`](CLAUDE_AGENT
 | [better-icons](better-icons/SKILL.md)                               | 通过 CLI 或 MCP 工具搜索 200+ Iconify 图标库并获取 SVG 图标。                                                                                  | [better-auth/better-icons](https://github.com/better-auth/better-icons/tree/main/skills)                                       |
 | [kimi-webbridge](kimi-webbridge/SKILL.md)                           | 通过本地守护进程控制用户真实浏览器，用于导航、表单填写、截图、页面读取和登录态会话。                                                          | [install.sh](https://cdn.kimi.com/webbridge/install.sh)                                                             |
 | [browser-trace](browser-trace/SKILL.md)                             | 采集浏览器自动化调试所需的 CDP trace、截图和 DOM dump。                                                                                     | [browserbase/skills](https://github.com/browserbase/skills/tree/main/skills/browser-trace)                                     |
-| [caveman](caveman/SKILL.md)                                         | 用“洞穴人”式极简表达压缩回复 tokens，同时保留完整技术准确性，并支持多档强度。                                                                  | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman/tree/main/skills/caveman)                                            |
 | [diagnosing-bugs](diagnosing-bugs/SKILL.md)                                   | 面向疑难 bug 与性能回归的严格诊断循环。                                                                                     | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/diagnosing-bugs)                                |
 | [deep-research](deep-research/SKILL.md)                                       | 生成专业深度调研报告，支持多 agent 并行写作、最新数据锚定、多语言输出和内置质量检查。                                      | [hoolulu/deep-research](https://github.com/hoolulu/deep-research/tree/main)                                                        |
 | [diagram-design](diagram-design/SKILL.md)                           | 把 39 种图做成可独立打开的 HTML/SVG/PNG 编辑级示意图；支持重绘 draw.io / Mermaid。                                                               | [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design/tree/main/skills/diagram-design)                 |
