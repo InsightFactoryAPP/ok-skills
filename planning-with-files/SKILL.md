@@ -1,9 +1,9 @@
 ---
 name: planning-with-files
 description: Persistent file-based planning for multi-step AI-agent work. Keeps task_plan.md, findings.md, and progress.md on disk; lifecycle hooks inject selected project planning context. Automatic recovery reads project planning files only. Explicit session-catchup.py --metadata reads same-project local agent session records and emits aggregate counts only; --replay may emit bounded nonce-framed excerpts. Optional gated mode can request continuation only when the host supports it and never runs commands declared in Markdown. The skill has no network upload path. Use for research or work needing 5+ tool calls.
-allowed-tools: "Read Write Edit Bash Glob Grep"
+allowed-tools: Read Write Edit Bash Glob Grep
 metadata:
-  version: "3.16.0"
+  version: 3.17.1
 ---
 
 # Planning with Files
@@ -12,7 +12,7 @@ Work like Manus: Use persistent markdown files as your "working memory on disk."
 
 ## FIRST: Restore Project State
 
-**Before starting work**, read the project planning files and run `git diff --stat`. Automatic recovery does not inspect agent session stores. The following optional command reads same-project local session records and emits aggregate counts only:
+**Before continuing**, resolve the plan this task owns. Use the installed `scripts/resolve-plan-dir.sh` (or `.ps1`) with the host's `PLAN_ID` and `PWF_PLAN_ROOT`, then read `task_plan.md`, `progress.md`, and `findings.md` from that selected directory. If an explicit selector is rejected, or multiple named plans exist without `PLAN_ID`, correct the pin and do not fall back to another task. Run `git diff --stat` for code changes not yet recorded there. All planning filenames below mean that selected directory. For parallel tasks, pin each host before it starts or use separate worktrees; a child process export does not change its host. One orchestrator owns a shared plan and summaries, while workers use assigned files or ledgers.
 
 ```bash
 # Linux/macOS (auto-detects python3 or python)
@@ -34,17 +34,16 @@ Use `--replay` instead of `--metadata` only for a deliberate bounded replay. Rep
 | Location | What Goes There |
 |----------|-----------------|
 | Skill directory (`planning-with-files/`) | Templates, scripts, reference docs |
-| Your project directory | `task_plan.md`, `findings.md`, `progress.md` |
+| Selected task directory in your project | `task_plan.md`, `findings.md`, `progress.md` |
 
 ## Quick Start
 
-Before ANY complex task:
+Before a complex task:
 
-1. **Create `task_plan.md`** — Use [templates/task_plan.md](templates/task_plan.md) as reference
-2. **Create `findings.md`** — Use [templates/findings.md](templates/findings.md) as reference
-3. **Create `progress.md`** — Use [templates/progress.md](templates/progress.md) as reference
-4. **Re-read plan before decisions** — Refreshes goals in attention window
-5. **Update after each phase** — Mark complete, log errors
+1. **Resolve or initialize the task directory.** Reuse the selected plan when resuming. For a separate task, run `scripts/init-session.sh "Task Name"` and pin the host with its printed `PLAN_ID`.
+2. **Create missing planning files only.** Use the templates in that directory and preserve existing work.
+3. **Re-read the selected plan before decisions.** Update progress after each phase.
+4. **Assign one plan owner.** Workers report through their own ledgers or assigned files; they do not rewrite the shared planning files.
 
 > **Note:** Planning files go in your project root, not the skill installation folder.
 
@@ -68,7 +67,7 @@ Filesystem = Disk (persistent, unlimited)
 ## Critical Rules
 
 ### 1. Create Plan First
-Never start a complex task without `task_plan.md`. Non-negotiable.
+Never start a complex task without a selected or newly initialized `task_plan.md`. Non-negotiable.
 
 ### 2. The 2-Action Rule
 > "After every 2 view/browser/search operations, IMMEDIATELY save key findings to text files."
