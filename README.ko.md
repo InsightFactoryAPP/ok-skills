@@ -6,7 +6,7 @@
 
 Codex, Claude Code, Cursor, OpenClaw, Trae 및 기타 `SKILL.md` 호환 도구를 위한 큐레이션된 AI 코딩 에이전트 스킬과 `CLAUDE.md` / `AGENTS.md` 플레이북 저장소입니다.
 
-이 저장소에는 현재 **재사용 가능한 스킬 18개**가 포함되어 있으며, 모두 루트 레벨 스킬 디렉터리로 이 저장소에서 직접 관리됩니다. `~/.agents/skills/ok-skills`에 clone 하면 되고, 내부 디렉터리 구조는 이미 `AGENTS.md` 기반 워크플로가 기대하는 형태와 맞춰져 있으며, [`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.md)는 Claude Code용 agent playbook을 제공합니다.
+이 저장소에는 현재 **재사용 가능한 스킬 17개**가 포함되어 있으며, 모두 루트 레벨 스킬 디렉터리로 이 저장소에서 직접 관리됩니다. `~/.agents/skills/ok-skills`에 clone 하면 되고, 내부 디렉터리 구조는 이미 `AGENTS.md` 기반 워크플로가 기대하는 형태와 맞춰져 있으며, [`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.md)는 Claude Code용 agent playbook을 제공합니다.
 
 **Codex skills**, **Claude Code skills**, **Cursor skills**, **OpenClaw skills**, 재사용 가능한 **CLAUDE.md / AGENTS.md** 플레이북, 바로 적용할 수 있는 **SKILL.md** 예제를 찾고 있다면 이 저장소는 검색성과 즉시 사용성을 모두 고려해 정리되어 있습니다.
 
@@ -46,7 +46,7 @@ clone 이후 저장소 경로는 `~/.agents/skills/ok-skills`가 되며, 내부 
   ...
 ```
 
-Claude Code 또는 Codex의 전역 지침은 [`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.md)에서 시작해 Claude Code의 `CLAUDE.md` 또는 Codex의 `AGENTS.md`로 복사하거나 병합할 수 있습니다. Chinese-first, KISS, 최신 문서/소스 확인, multi-agent 우선, `caveman` / `planning-with-files` / `karpathy-guidelines` 기본 활성화, 엄격한 TypeScript 규칙, context-mode 라우팅을 담은 agent playbook입니다. 재사용하기 전에 `语言要求` 섹션을 프로젝트에 맞게 수정하세요. `其他注意项` 섹션은 프로젝트 로컬 설정이므로 필요에 따라 수정할 수 있습니다.
+Claude Code 또는 Codex의 전역 지침은 [`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.md)에서 시작해 Claude Code의 `CLAUDE.md` 또는 Codex의 `AGENTS.md`로 복사하거나 병합할 수 있습니다. Chinese-first, KISS, 최신 문서/소스 확인, multi-agent 우선, `planning-with-files` / `karpathy-guidelines` 기본 활성화, 엄격한 TypeScript 규칙, context-mode 라우팅을 담은 agent playbook입니다. 재사용하기 전에 `语言要求` 섹션을 프로젝트에 맞게 수정하세요. `其他注意项` 섹션은 프로젝트 로컬 설정이므로 필요에 따라 수정할 수 있습니다.
 
 그리고 `AGENTS.md`에 아래처럼 간단한 트리거 규칙을 추가하거나, 같은 skill 트리거를 `CLAUDE.md` / `AGENTS.md`에 병합하면 됩니다.
 
@@ -120,7 +120,6 @@ Claude Code 또는 Codex의 전역 지침은 [`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.
 | [deep-research](deep-research/SKILL.md)                             | 병렬 장 작성, 최신 데이터 타기팅, 다국어 출력, 내장 품질 검사를 지원하는 전문 심층 연구 보고서 생성.                                      | [hoolulu/deep-research](https://github.com/hoolulu/deep-research)                                                               |
 | [better-icons](better-icons/SKILL.md)                               | CLI 또는 MCP 도구로 200개 이상의 Iconify 아이콘 라이브러리를 검색하고 SVG 아이콘을 가져옵니다.                                                   | [better-auth/better-icons](https://github.com/better-auth/better-icons/tree/main/skills)                                       |
 | [kimi-webbridge](kimi-webbridge/SKILL.md)                           | 로컬 데몬으로 사용자의 실제 브라우저를 제어해 탐색, 폼 입력, 스크린샷, 페이지 읽기, 로그인 세션을 처리합니다.                                    | [install.sh](https://cdn.kimi.com/webbridge/install.sh)                                                             |
-| [caveman](caveman/SKILL.md)                                         | 기술 정확성은 유지한 채 원시인 말투의 초압축 응답으로 토큰 사용량을 줄입니다.                                                                    | [JuliusBrussee/caveman](https://github.com/JuliusBrussee/caveman/tree/main/skills/caveman)                                            |
 | [diagnosing-bugs](diagnosing-bugs/SKILL.md)                                   | 어려운 bug와 performance regression을 위한 엄격한 진단 루프.                                                                                     | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/diagnosing-bugs)                                |
 | [diagram-design](diagram-design/SKILL.md)                             | 39종 에디토리얼 HTML/SVG/PNG 다이어그램. 브랜드 token 지원. draw.io/Mermaid 재작성.                                                                                                | [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design/tree/main/skills/diagram-design) |
 | [find-docs](find-docs/SKILL.md)                                     | Context7 CLI를 사용해 최신 문서, API 레퍼런스, 코드 예제를 조회.                                                                                 | [upstash/context7](https://github.com/upstash/context7/tree/master/skills/find-docs)                                           |
