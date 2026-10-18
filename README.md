@@ -6,7 +6,7 @@ English | [简体中文](README.zh-CN.md) | [繁體中文](README.zh-TW.md) | [�
 
 Curated AI coding agent skills and `CLAUDE.md` / `AGENTS.md` playbooks for Codex, Claude Code, Cursor, OpenClaw, Autohand Code, Trae, and other `SKILL.md`-compatible tools.
 
-This repo currently bundles **31 reusable skills**, all maintained as top-level skill directories in this repo. Clone it into `~/.agents/skills/ok-skills`; the directories inside already match the layout expected by `AGENTS.md`-driven workflows, and [`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.md) provides a Claude Code-oriented agent playbook.
+This repo currently bundles **29 reusable skills**, all maintained as top-level skill directories in this repo. Clone it into `~/.agents/skills/ok-skills`; the directories inside already match the layout expected by `AGENTS.md`-driven workflows, and [`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.md) provides a Claude Code-oriented agent playbook.
 
 If you are looking for **Codex skills**, **Claude Code skills**, **Cursor skills**, **OpenClaw skills**, reusable **CLAUDE.md / AGENTS.md** playbooks, or practical **SKILL.md** examples, this repository is designed to be both searchable and immediately usable.
 
@@ -118,9 +118,7 @@ Then ask naturally:
 - [ai-elements](ai-elements/SKILL.md): build AI chat UI components for the `ai-elements` library.
 - [huashu-design](huashu-design/SKILL.md): produce high-fidelity HTML prototypes, slide decks, motion demos, design variants, video exports, and design critiques.
 - [imagegen-frontend-web](imagegen-frontend-web/SKILL.md): generate premium frontend reference images, one horizontal image per section, with strong art direction.
-- [gpt-taste](gpt-taste/SKILL.md): build AIDA-structured, motion-rich frontend pages with randomized layouts and GSAP patterns.
 - [better-icons](better-icons/SKILL.md): search, browse, and retrieve SVG icons from 200+ Iconify libraries via CLI or MCP.
-- [diagram-design](diagram-design/SKILL.md): create branded editorial diagrams as self-contained HTML/SVG/PNG — architecture, flowchart, sequence, and 36 more types. Redraw draw.io or Mermaid.
 
 ### Utilities & Authoring
 
@@ -135,12 +133,17 @@ Then ask naturally:
 - The Matt Pocock engineering skills now use `GLOSSARY.md` and `GLOSSARY-MAP.md` for domain vocabulary. Existing `CONTEXT.md` / `CONTEXT-MAP.md` glossaries need to be renamed and their links updated; ADRs stay under `docs/adr/`.
 - OpenCLI upstream removed sitemap skills, bundled sitemaps, and external CLI passthrough. Use the current browser/adapter skills and site memory; invoke external CLIs directly.
 
+### Upstream Migration Notes (2026-10-18)
+
+- OpenCLI commands now default to `{ok:true,data:...}` JSON results. Adapter creation and validation use `opencli adapter init|check|test`; update scripts that parse the old output or use the former browser adapter commands. The CLI itself must support these commands.
+- Huashu Design 3.0 organizes work by output module and starts new visual designs with six thumbnails and three complete directions for selection. Pure exports and mechanical edits are exempt.
+- Kimi WebBridge skill 2.0.24 documents tab attachment and paginated ARIA snapshots. These features require a matching daemon and browser extension; syncing this repository only updates the skill files.
+
 ## Common Prerequisites
 
 - Some skills assume `gh` is installed and authenticated.
 - Browser-focused skills may require a Chrome/CDP-capable environment.
 - Third-party doc lookup skills may depend on external CLIs or MCP tools; check each `SKILL.md` for details.
-- diagram-design PNG export needs Playwright and Chromium: `pip install playwright && playwright install chromium`.
 
 ## Full Skill Index
 
@@ -160,13 +163,11 @@ Then ask naturally:
 | [browser-trace](browser-trace/SKILL.md)                             | Capture CDP traces, screenshots, and DOM dumps for browser automation debugging.                                                                                                        | [browserbase/skills](https://github.com/browserbase/skills/tree/main/skills/browser-trace)                                     |
 | [diagnosing-bugs](diagnosing-bugs/SKILL.md)                                   | Disciplined diagnosis loop for hard bugs and performance regressions.                                                                                                                     | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/diagnosing-bugs)                                |
 | [deep-research](deep-research/SKILL.md)                                       | Professional deep research reports with multi-agent parallel writing, current-data targeting, multilingual output, and built-in quality checks.                                      | [hoolulu/deep-research](https://github.com/hoolulu/deep-research/tree/main)                                                        |
-| [diagram-design](diagram-design/SKILL.md)                           | Create branded editorial HTML/SVG/PNG diagrams (44 types). Redraw draw.io or Mermaid sources.                                                               | [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design/tree/main/skills/diagram-design)                 |
 | [find-docs](find-docs/SKILL.md)                                     | Use the Context7 CLI for current documentation lookup, API references, and code examples.                                                                                              | [upstash/context7](https://github.com/upstash/context7/tree/master/skills/find-docs)                                           |
 | [exa-search](exa-search/SKILL.md)                                   | Use Exa for web, code, and company research.                                                                                                                                            | Custom                                                                                                                         |
 | [find-skills](find-skills/SKILL.md)                                 | Discover existing skills when users need specialized capabilities.                                                                                                                      | [vercel-labs/skills](https://github.com/vercel-labs/skills/tree/main/skills/find-skills)                                       |
 | [huashu-design](huashu-design/SKILL.md)                           | Create high-fidelity HTML prototypes, interactive demos, slide decks, motion design, design variants, video exports, and critiques.                                                       | [alchaincyf/huashu-design](https://github.com/alchaincyf/huashu-design)                                                       |
 | [imagegen-frontend-web](imagegen-frontend-web/SKILL.md) | Generate premium frontend reference images, one horizontal image per section, with strong art direction. | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/main/skills/imagegen-frontend-web) |
-| [gpt-taste](gpt-taste/SKILL.md) | Build AIDA-structured, motion-rich frontend pages with randomized layouts and GSAP patterns. | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/main/skills/gpt-tasteskill) |
 | [get-api-docs](get-api-docs/SKILL.md)                               | Fetch current third-party API or SDK docs before writing code.                                                                                                                          | [andrewyng/context-hub](https://github.com/andrewyng/context-hub/tree/main/cli/skills/get-api-docs)                            |
 | [grilling](grilling/SKILL.md)                               | Reusable design-tree interview loop for direct grill sessions.                                                                                                 | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/grilling)                                |
 | [teach](teach/SKILL.md) | Teach a user a skill or concept through a stateful workspace of missions, resources, lessons, and learning records. | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/teach) |
