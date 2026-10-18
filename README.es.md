@@ -6,7 +6,7 @@
 
 Coleccion curada de skills para agentes de programacion con IA y playbooks de `CLAUDE.md` / `AGENTS.md` para Codex, Claude Code, Cursor, OpenClaw, Trae y otras herramientas compatibles con `SKILL.md`.
 
-Este repositorio incluye actualmente **29 skills reutilizables**, todas mantenidas directamente como directorios de skill de nivel superior en este repo. Clonalo en `~/.agents/skills/ok-skills`; los directorios internos ya siguen la estructura esperada por los flujos basados en `AGENTS.md`, y [`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.md) aporta un agent playbook orientado a Claude Code.
+Este repositorio incluye actualmente **28 skills reutilizables**, todas mantenidas directamente como directorios de skill de nivel superior en este repo. Clonalo en `~/.agents/skills/ok-skills`; los directorios internos ya siguen la estructura esperada por los flujos basados en `AGENTS.md`, y [`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.md) aporta un agent playbook orientado a Claude Code.
 
 Si estas buscando **Codex skills**, **Claude Code skills**, **Cursor skills**, **OpenClaw skills**, playbooks reutilizables de **CLAUDE.md / AGENTS.md** o ejemplos practicos de **SKILL.md**, este repositorio esta organizado para ser facil de encontrar y facil de usar desde el primer clon.
 

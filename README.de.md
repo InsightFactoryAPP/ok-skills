@@ -6,7 +6,7 @@
 
 Kuratiertes Repository für AI Coding Agent Skills und `CLAUDE.md` / `AGENTS.md`-Playbooks für Codex, Claude Code, Cursor, OpenClaw, Trae und andere Tools, die mit `SKILL.md`-Workflows kompatibel sind.
 
-Dieses Repository bündelt aktuell **29 wiederverwendbare Skills**, alle als Top-Level-Skill-Verzeichnisse direkt in diesem Repository gepflegt. Klone es nach `~/.agents/skills/ok-skills`; die enthaltenen Verzeichnisse entsprechen bereits dem Layout, das `AGENTS.md`-gesteuerte Workflows erwarten, und [`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.md) bietet ein auf Claude Code ausgerichtetes Agent-Playbook.
+Dieses Repository bündelt aktuell **28 wiederverwendbare Skills**, alle als Top-Level-Skill-Verzeichnisse direkt in diesem Repository gepflegt. Klone es nach `~/.agents/skills/ok-skills`; die enthaltenen Verzeichnisse entsprechen bereits dem Layout, das `AGENTS.md`-gesteuerte Workflows erwarten, und [`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.md) bietet ein auf Claude Code ausgerichtetes Agent-Playbook.
 
 Wenn du nach **Codex skills**, **Claude Code skills**, **Cursor skills**, **OpenClaw skills**, wiederverwendbaren **CLAUDE.md / AGENTS.md**-Playbooks oder praxistauglichen **SKILL.md**-Beispielen suchst, ist dieses Repository bewusst auf Auffindbarkeit und sofortige Nutzbarkeit ausgelegt.
 

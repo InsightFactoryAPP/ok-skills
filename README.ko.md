@@ -6,7 +6,7 @@
 
 Codex, Claude Code, Cursor, OpenClaw, Trae 및 기타 `SKILL.md` 호환 도구를 위한 큐레이션된 AI 코딩 에이전트 스킬과 `CLAUDE.md` / `AGENTS.md` 플레이북 저장소입니다.
 
-이 저장소에는 현재 **재사용 가능한 스킬 29개**가 포함되어 있으며, 모두 루트 레벨 스킬 디렉터리로 이 저장소에서 직접 관리됩니다. `~/.agents/skills/ok-skills`에 clone 하면 되고, 내부 디렉터리 구조는 이미 `AGENTS.md` 기반 워크플로가 기대하는 형태와 맞춰져 있으며, [`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.md)는 Claude Code용 agent playbook을 제공합니다.
+이 저장소에는 현재 **재사용 가능한 스킬 28개**가 포함되어 있으며, 모두 루트 레벨 스킬 디렉터리로 이 저장소에서 직접 관리됩니다. `~/.agents/skills/ok-skills`에 clone 하면 되고, 내부 디렉터리 구조는 이미 `AGENTS.md` 기반 워크플로가 기대하는 형태와 맞춰져 있으며, [`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.md)는 Claude Code용 agent playbook을 제공합니다.
 
 **Codex skills**, **Claude Code skills**, **Cursor skills**, **OpenClaw skills**, 재사용 가능한 **CLAUDE.md / AGENTS.md** 플레이북, 바로 적용할 수 있는 **SKILL.md** 예제를 찾고 있다면 이 저장소는 검색성과 즉시 사용성을 모두 고려해 정리되어 있습니다.
 
