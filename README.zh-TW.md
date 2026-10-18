@@ -6,7 +6,7 @@
 
 這是一個面向 Codex、Claude Code、Cursor、OpenClaw、Trae 以及其他相容 `SKILL.md` / `CLAUDE.md` / `AGENTS.md` 工作流工具的 AI coding agent skills 倉庫。
 
-目前倉庫共收錄 **28 個可重用技能**，全部作為頂層技能目錄由本倉直接維護。將它 clone 到 `~/.agents/skills/ok-skills` 即可，倉庫內部目錄已符合 `AGENTS.md` 所需的 skills 佈局，[`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.md) 則提供面向 Claude Code 的 agent playbook。
+目前倉庫共收錄 **31 個可重用技能**，全部作為頂層技能目錄由本倉直接維護。將它 clone 到 `~/.agents/skills/ok-skills` 即可，倉庫內部目錄已符合 `AGENTS.md` 所需的 skills 佈局，[`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.md) 則提供面向 Claude Code 的 agent playbook。
 
 如果你正在找 **Codex skills**、**Claude Code skills**、**Cursor skills**、**OpenClaw skills**、可重用的 **CLAUDE.md / AGENTS.md** 範本，或一套能直接落地的 **SKILL.md** 範例倉庫，這個專案就是為了搜尋可發現性與開箱即用而整理的。
 
@@ -110,6 +110,7 @@ Claude Code 或 Codex 的全域指令可以從 [`CLAUDE_AGENTS.md`](CLAUDE_AGENT
 
 ### 工具與內容製作
 
+- [bopomofo-rescue](bopomofo-rescue/SKILL.md)：把忘記切換輸入法、用注音鍵盤打出的英數亂碼還原成中文，例如 su3cl3a8 → 你好嗎。
 - [huashu-design](huashu-design/SKILL.md)：製作 HTML deck、可編輯 PPTX、MP4/GIF 動畫與帶解說的設計影片。
 
 ## Vendored Skill Packs
@@ -135,6 +136,7 @@ Claude Code 或 Codex 的全域指令可以從 [`CLAUDE_AGENTS.md`](CLAUDE_AGENT
 | [ax](ax/SKILL.md)                                                   | AI 時代的 curl：抓取 URL、發現頁面結構、從 HTML 結構化擷取資料，無需臨時解析腳本。                                                                                                                          | [yusukebe/ax](https://github.com/yusukebe/ax/tree/main/skills/ax)                                                             |
 
 | [better-icons](better-icons/SKILL.md)                               | 透過 CLI 或 MCP 工具搜尋 200+ Iconify 圖示庫並取得 SVG 圖示。                                                                                  | [better-auth/better-icons](https://github.com/better-auth/better-icons/tree/main/skills)                                       |
+| [bopomofo-rescue](bopomofo-rescue/SKILL.md) | 把忘記切換輸入法、用注音鍵盤打出的英數亂碼還原成中文，例如 su3cl3a8 → 你好嗎。 | [Oliviaiii/bopomofo-rescue](https://github.com/Oliviaiii/bopomofo-rescue) |
 | [kimi-webbridge](kimi-webbridge/SKILL.md)                           | 透過本機守護行程控制使用者的真實瀏覽器，用於導覽、表單填寫、截圖、頁面讀取和登入狀態工作階段。                                                | [install.sh](https://cdn.kimi.com/webbridge/install.sh)                                                             |
 | [browser-trace](browser-trace/SKILL.md)                             | 擷取瀏覽器自動化除錯所需的 CDP trace、截圖與 DOM dump。                                                                                    | [browserbase/skills](https://github.com/browserbase/skills/tree/main/skills/browser-trace)                                     |
 | [diagnosing-bugs](diagnosing-bugs/SKILL.md)                                   | 面向疑難 bug 與效能回歸的嚴格診斷迴圈。                                                                                     | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/diagnosing-bugs)                                |
