@@ -6,7 +6,7 @@
 
 Codex, Claude Code, Cursor, OpenClaw, Trae और अन्य `SKILL.md`-compatible टूल्स के लिए चुनी हुई AI coding agent skills और `CLAUDE.md` / `AGENTS.md` playbooks का यह curated repository है।
 
-इस repo में अभी **30 reusable skills** शामिल हैं, और सभी इस repo में top-level skill directories के रूप में सीधे maintain की जाती हैं। इसे `~/.agents/skills/ok-skills` में clone करें; अंदर की directories पहले से ही `AGENTS.md`-driven workflows के अपेक्षित layout के अनुसार हैं, और [`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.md) Claude Code-oriented agent playbook देता है。
+इस repo में अभी **28 reusable skills** शामिल हैं, और सभी इस repo में top-level skill directories के रूप में सीधे maintain की जाती हैं। इसे `~/.agents/skills/ok-skills` में clone करें; अंदर की directories पहले से ही `AGENTS.md`-driven workflows के अपेक्षित layout के अनुसार हैं, और [`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.md) Claude Code-oriented agent playbook देता है。
 
 अगर आप **Codex skills**, **Claude Code skills**, **Cursor skills**, **OpenClaw skills**, reusable **CLAUDE.md / AGENTS.md** playbooks, या practical **SKILL.md** examples खोज रहे हैं, तो यह repository खोजने में आसान और clone करते ही उपयोग योग्य होने के लिए व्यवस्थित की गई है।
 
@@ -72,6 +72,7 @@ Claude Code या Codex की global instructions के लिए [`CLAUDE_AG
 
 - [find-docs](find-docs/SKILL.md): current docs lookup के लिए focused Context7 CLI workflow.
 - [exa-search](exa-search/SKILL.md): Exa search tools के साथ web, code, और company research.
+- [reverse-engineer-anything](reverse-engineer-anything/SKILL.md): जब source code किसी जारी किए गए ऐप या बाइनरी के व्यवहार को स्पष्ट न करे, तब REA CLI/MCP से प्रमाण जुटाएँ और versions की तुलना करें.
 - [get-api-docs](get-api-docs/SKILL.md): coding शुरू करने से पहले current third-party API और SDK documentation fetch करें।
 - [find-skills](find-skills/SKILL.md): जब user किसी capability की मांग करे, तब existing skills खोजें।
 - [ax](ax/SKILL.md): AI-era curl — pages fetch, structure discover, structured extract; throwaway parsing scripts ki jagah.
@@ -84,11 +85,12 @@ Claude Code या Codex की global instructions के लिए [`CLAUDE_AG
 - [diagnosing-bugs](diagnosing-bugs/SKILL.md): कठिन bugs और performance regressions के लिए disciplined diagnosis loop.
 - [grilling](grilling/SKILL.md): direct grill sessions के लिए reusable design-tree interview loop.
 - [teach](teach/SKILL.md): missions, resources, lessons, और learning records के साथ stateful teaching workspace चलाएं.
-- [domain-modeling](domain-modeling/SKILL.md): build and sharpen project domain terminology, `CONTEXT.md`, and ADRs.
+- [domain-modeling](domain-modeling/SKILL.md): build and sharpen project domain terminology, `GLOSSARY.md`, and ADRs.
 - [codebase-design](codebase-design/SKILL.md): shared deep-module vocabulary for seams, interfaces, leverage, locality, and testability.
 - [improve-codebase-architecture](improve-codebase-architecture/SKILL.md): locality, leverage, testability, और AI navigation सुधारने वाली architecture deepening opportunities खोजें।
 - [prototype](prototype/SKILL.md): design questions का जल्दी जवाब देने के लिए throwaway logic या UI prototypes बनाएं.
 - [karpathy-guidelines](karpathy-guidelines/SKILL.md): overcomplication, छिपी assumptions, और unverifiable changes घटाने वाली coding behavior guidelines।
+- [ponytail](ponytail/SKILL.md): YAGNI अपनाएँ, मौजूदा कोड का पुनः उपयोग करें और अनावश्यक जटिलता घटाने के लिए standard library व platform की मूल क्षमताओं को प्राथमिकता दें; lite, full और ultra मोड।
 - [migrate-to-shoehorn](migrate-to-shoehorn/SKILL.md): tests में `as` type assertions को `@total-typescript/shoehorn` में migrate करें।
 - [tdd](tdd/SKILL.md): feature, bugfix, refactor, या behavior change से पहले test-first red-green-refactor लागू करता है।
 
@@ -104,9 +106,7 @@ Claude Code या Codex की global instructions के लिए [`CLAUDE_AG
 - [ai-elements](ai-elements/SKILL.md): `ai-elements` library के लिए AI chat UI components बनाएं।
 - [huashu-design](huashu-design/SKILL.md): high-fidelity HTML prototypes, interactive demos, slide decks, motion design, variants, video exports, aur design critiques banayein.
 - [imagegen-frontend-web](imagegen-frontend-web/SKILL.md): premium frontend reference images banayein, har section ke liye ek horizontal image.
-- [gpt-taste](gpt-taste/SKILL.md): AIDA-structured, motion-rich frontend pages random layouts aur GSAP patterns ke sath banayein.
 - [better-icons](better-icons/SKILL.md): CLI या MCP के जरिए 200+ Iconify libraries में icons खोजें, browse करें, और SVG प्राप्त करें।
-- [diagram-design](diagram-design/SKILL.md): branded editorial diagrams ko standalone HTML/SVG/PNG banayein — architecture, flowchart, sequence, aur 36 aur types. draw.io ya Mermaid redraw.
 
 ### Utilities & Authoring
 
@@ -121,7 +121,6 @@ Claude Code या Codex की global instructions के लिए [`CLAUDE_AG
 - कुछ skills मानकर चलती हैं कि `gh` installed और authenticated है।
 - Browser-focused skills के लिए Chrome/CDP-capable environment की आवश्यकता हो सकती है।
 - Third-party doc lookup skills external CLIs या MCP tools पर निर्भर हो सकती हैं; विवरण के लिए संबंधित `SKILL.md` देखें।
-- diagram-design PNG export के लिए Playwright और Chromium चाहिए: `pip install playwright && playwright install chromium`।
 
 ## पूरा Skill Index
 
@@ -141,21 +140,21 @@ Claude Code या Codex की global instructions के लिए [`CLAUDE_AG
 | [browser-trace](browser-trace/SKILL.md)                             | browser automation debugging के लिए CDP traces, screenshots, और DOM dumps capture करें।                                                                                  | [browserbase/skills](https://github.com/browserbase/skills/tree/main/skills/browser-trace)                                     |
 | [diagnosing-bugs](diagnosing-bugs/SKILL.md)                                   | कठिन bugs और performance regressions के लिए disciplined diagnosis loop.                                                                             | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/diagnosing-bugs)                                |
 | [deep-research](deep-research/SKILL.md)                                       | multi-agent parallel writing, latest-data targeting, multilingual output और built-in quality checks वाले professional deep research reports बनाता है। | [hoolulu/deep-research](https://github.com/hoolulu/deep-research/tree/main)                                                        |
-| [diagram-design](diagram-design/SKILL.md)                           | Branded editorial HTML/SVG/PNG diagrams (39 types). draw.io या Mermaid sources redraw करें।                                                               | [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design/tree/main/skills/diagram-design)                 |
 | [find-docs](find-docs/SKILL.md)                                     | current documentation, API references, और code examples के लिए Context7 CLI का उपयोग करें।                                                                                                   | [upstash/context7](https://github.com/upstash/context7/tree/master/skills/find-docs)                                           |
 | [exa-search](exa-search/SKILL.md)                                   | web, code, और company research के लिए Exa का उपयोग करें।                                                                                                                                     | Custom                                                                                                                         |
+| [reverse-engineer-anything](reverse-engineer-anything/SKILL.md) | जब source code किसी जारी किए गए ऐप या बाइनरी के व्यवहार को स्पष्ट न करे, तब REA CLI/MCP से प्रमाण जुटाएँ और versions की तुलना करें. | [morluto/rea](https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything) |
 | [find-skills](find-skills/SKILL.md)                                 | जब users को specialized capabilities चाहिए हों, तब existing skills खोजें।                                                                                                                    | [vercel-labs/skills](https://github.com/vercel-labs/skills/tree/main/skills/find-skills)                                       |
 | [huashu-design](huashu-design/SKILL.md)                           | High-fidelity HTML prototypes, interactive demos, slide decks, motion design, variants, video exports, aur design critiques banayein.                                                       | [alchaincyf/huashu-design](https://github.com/alchaincyf/huashu-design)                                                       |
 | [imagegen-frontend-web](imagegen-frontend-web/SKILL.md) | Premium frontend reference images banayein, har section ke liye ek horizontal image. | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/main/skills/imagegen-frontend-web) |
-| [gpt-taste](gpt-taste/SKILL.md) | AIDA-structured, motion-rich frontend pages random layouts aur GSAP patterns ke sath banayein. | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/main/skills/gpt-tasteskill) |
 | [get-api-docs](get-api-docs/SKILL.md)                               | code लिखने से पहले current third-party API या SDK docs fetch करें।                                                                                                                           | [andrewyng/context-hub](https://github.com/andrewyng/context-hub/tree/main/cli/skills/get-api-docs)                            |
 | [grilling](grilling/SKILL.md)                               | Direct grill sessions के लिए reusable design-tree interview loop.                                                                                                         | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/grilling)                                |
 | [teach](teach/SKILL.md) | missions, resources, lessons, और learning records वाले workspace में skill या concept सिखाता है. | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/teach) |
-| [domain-modeling](domain-modeling/SKILL.md)                   | Build and sharpen project domain terminology, `CONTEXT.md`, and ADRs.                                                                                         | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/domain-modeling)                          |
+| [domain-modeling](domain-modeling/SKILL.md)                   | Build and sharpen project domain terminology, `GLOSSARY.md`, and ADRs.                                                                                         | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/domain-modeling)                          |
 | [codebase-design](codebase-design/SKILL.md)                   | Shared deep-module vocabulary for seams, interfaces, leverage, locality, and testability.                                                                                         | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/codebase-design)                          |
 | [improve-codebase-architecture](improve-codebase-architecture/SKILL.md) | locality, leverage, testability, और AI navigation सुधारने वाली architecture deepening opportunities खोजें।                                                                                   | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/improve-codebase-architecture)                              |
 | [prototype](prototype/SKILL.md) | Design questions का जल्दी जवाब देने के लिए throwaway logic या UI prototypes बनाता है. | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/prototype) |
 | [karpathy-guidelines](karpathy-guidelines/SKILL.md)                 | Overcomplication, छिपी assumptions, और unverifiable changes घटाने वाली coding behavior guidelines।                                                                                                           | [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills/tree/main/skills/karpathy-guidelines)               |
+| [ponytail](ponytail/SKILL.md) | YAGNI अपनाएँ, मौजूदा कोड का पुनः उपयोग करें और अनावश्यक जटिलता घटाने के लिए standard library व platform की मूल क्षमताओं को प्राथमिकता दें; lite, full और ultra मोड। | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail/tree/main/skills/ponytail) |
 | [migrate-to-shoehorn](migrate-to-shoehorn/SKILL.md)                 | test files को `as` type assertions से `@total-typescript/shoehorn` में migrate करें।                                                                                                          | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/misc/migrate-to-shoehorn)                                        |
 | [opencli](opencli/opencli-usage/SKILL.md)                                         | Browser login session reuse, public APIs, और AI-generated adapters के साथ websites को CLI commands में बदलने की skill.                                                                       | [jackwener/opencli](https://github.com/jackwener/opencli/tree/main/skills)                                                                      |
 | [planning-with-files](planning-with-files/SKILL.md)                 | `task_plan.md`, `findings.md`, और `progress.md` का उपयोग करके complex tasks के लिए file-based planning.                                                                                      | [OthmanAdi/planning-with-files](https://github.com/OthmanAdi/planning-with-files/tree/master/.codex/skills/planning-with-files)   |

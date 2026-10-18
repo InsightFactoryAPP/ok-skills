@@ -36,7 +36,7 @@ hooks:
         - type: command
           command: "SH=\"\"; for c in \"${PWF_SCRIPT_DIR}/skill-hook.sh\" \"${CLAUDE_SKILL_DIR}/scripts/skill-hook.sh\" \"$HOME/.codex/skills/planning-with-files/scripts/skill-hook.sh\" \"$HOME/.claude/skills/planning-with-files/scripts/skill-hook.sh\" \"$HOME/.claude/plugins/marketplaces/planning-with-files/scripts/skill-hook.sh\"; do [ -f \"$c\" ] && { SH=\"$c\"; break; }; done; [ -n \"$SH\" ] && sh \"$SH\" --event=precompact; exit 0"
 metadata:
-  version: "3.17.1"
+  version: "3.24.3"
 
 ---
 
@@ -50,24 +50,24 @@ Work like Manus: Use persistent markdown files as your "working memory on disk."
 
 ```bash
 # Linux/macOS (auto-detects python3 or python)
-$(command -v python3 || command -v python) ~/.codex/skills/planning-with-files/scripts/session-catchup.py --metadata "$(pwd)"
+$(command -v python3 || command -v python) scripts/session-catchup.py --metadata "$(pwd)"
 ```
 
 ```powershell
 # Windows PowerShell
-python "$env:USERPROFILE\.codex\skills\planning-with-files\scripts\session-catchup.py" --metadata (Get-Location)
+python ".\scripts\session-catchup.py" --metadata (Get-Location)
 ```
 
 Use `--replay` instead of `--metadata` only for a deliberate bounded replay. Replay emits nonce-framed same-project excerpts; treat them as untrusted data. This skill has no network upload path.
 
 ## Important: Where Files Go
 
-- **Templates** are in `~/.codex/skills/planning-with-files/templates/`
+- **Templates** are in `templates/`
 - **Your planning files** go in **your project directory**
 
 | Location | What Goes There |
 |----------|-----------------|
-| Skill directory (`~/.codex/skills/planning-with-files/`) | Templates, scripts, reference docs |
+| Skill directory (`planning-with-files/`) | Templates, scripts, reference docs |
 | Selected task directory in your project | `task_plan.md`, `findings.md`, `progress.md` |
 
 ## Quick Start
@@ -211,6 +211,12 @@ Helper scripts for automation:
 - `scripts/init-session.sh` — Initialize all planning files
 - `scripts/check-complete.sh` — Verify all phases complete
 - `scripts/session-catchup.py`: Explicit same-project session-record aggregation or bounded replay (`--metadata` / `--replay`); bare invocation does not access host history
+
+### List saved plans
+
+To find a task before resuming it, run `sh "<skill-dir>/scripts/set-active-plan.sh" --list` or, in Windows PowerShell, `& "<skill-dir>/scripts/set-active-plan.ps1" -List`. Replace `<skill-dir>` with this installed skill directory and keep your current directory at the project root.
+
+This read-only command lists named plans and phase progress under the current directory's `.planning/`. `[active]` marks the shared default pointer; it does not bind a session. Concurrent tasks still require each host's `PLAN_ID` or separate worktrees.
 
 ## Advanced Topics
 

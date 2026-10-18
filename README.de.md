@@ -6,7 +6,7 @@
 
 Kuratiertes Repository für AI Coding Agent Skills und `CLAUDE.md` / `AGENTS.md`-Playbooks für Codex, Claude Code, Cursor, OpenClaw, Trae und andere Tools, die mit `SKILL.md`-Workflows kompatibel sind.
 
-Dieses Repository bündelt aktuell **30 wiederverwendbare Skills**, alle als Top-Level-Skill-Verzeichnisse direkt in diesem Repository gepflegt. Klone es nach `~/.agents/skills/ok-skills`; die enthaltenen Verzeichnisse entsprechen bereits dem Layout, das `AGENTS.md`-gesteuerte Workflows erwarten, und [`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.md) bietet ein auf Claude Code ausgerichtetes Agent-Playbook.
+Dieses Repository bündelt aktuell **28 wiederverwendbare Skills**, alle als Top-Level-Skill-Verzeichnisse direkt in diesem Repository gepflegt. Klone es nach `~/.agents/skills/ok-skills`; die enthaltenen Verzeichnisse entsprechen bereits dem Layout, das `AGENTS.md`-gesteuerte Workflows erwarten, und [`CLAUDE_AGENTS.md`](CLAUDE_AGENTS.md) bietet ein auf Claude Code ausgerichtetes Agent-Playbook.
 
 Wenn du nach **Codex skills**, **Claude Code skills**, **Cursor skills**, **OpenClaw skills**, wiederverwendbaren **CLAUDE.md / AGENTS.md**-Playbooks oder praxistauglichen **SKILL.md**-Beispielen suchst, ist dieses Repository bewusst auf Auffindbarkeit und sofortige Nutzbarkeit ausgelegt.
 
@@ -72,6 +72,7 @@ Danach kannst du natürlich formulieren:
 
 - [find-docs](find-docs/SKILL.md): fokussierter Context7-CLI-Workflow für aktuelle Dokumentationssuche.
 - [exa-search](exa-search/SKILL.md): Web-, Code- und Unternehmensrecherche mit Exa-Suchwerkzeugen.
+- [reverse-engineer-anything](reverse-engineer-anything/SKILL.md): Untersucht ausgelieferte Anwendungen und Binärdateien, wenn der Quellcode ihr Verhalten nicht erklärt; nutzt REAs CLI/MCP, um Belege zu sammeln und Versionen zu vergleichen.
 - [get-api-docs](get-api-docs/SKILL.md): aktuelle Third-Party-API- und SDK-Dokumentation vor dem Coden abrufen.
 - [find-skills](find-skills/SKILL.md): vorhandene Skills finden, wenn ein Benutzer nach einer Fähigkeit fragt.
 - [ax](ax/SKILL.md): curl fuer die AI-Aera — Seiten holen, Struktur entdecken, strukturierte Daten extrahieren ohne Wegwerf-Parsing-Skripte.
@@ -84,11 +85,12 @@ Danach kannst du natürlich formulieren:
 - [diagnosing-bugs](diagnosing-bugs/SKILL.md): disziplinierte Diagnose-Schleife fuer schwierige Bugs und Performance-Regressionen.
 - [grilling](grilling/SKILL.md): wiederverwendbare Design-Tree Interview-Schleife fuer direkte Grill-Sessions.
 - [teach](teach/SKILL.md): ein stateful Teaching-Workspace mit Mission, Ressourcen, Lessons und Learning Records fuehren.
-- [domain-modeling](domain-modeling/SKILL.md): build and sharpen project domain terminology, `CONTEXT.md`, and ADRs.
+- [domain-modeling](domain-modeling/SKILL.md): build and sharpen project domain terminology, `GLOSSARY.md`, and ADRs.
 - [codebase-design](codebase-design/SKILL.md): shared deep-module vocabulary for seams, interfaces, leverage, locality, and testability.
 - [improve-codebase-architecture](improve-codebase-architecture/SKILL.md): Architektur-Deepening-Chancen finden, die Locality, Leverage, Testbarkeit und AI-Navigation verbessern.
 - [prototype](prototype/SKILL.md): Throwaway-Logik- oder UI-Prototypen bauen, um Designfragen schnell zu beantworten.
 - [karpathy-guidelines](karpathy-guidelines/SKILL.md): Coding-Verhaltensregeln gegen Overengineering, versteckte Annahmen und nicht verifizierbare Änderungen.
+- [ponytail](ponytail/SKILL.md): YAGNI anwenden, vorhandenen Code wiederverwenden und Standardbibliothek sowie native Plattformfunktionen bevorzugen; mit den Modi lite, full und ultra.
 - [migrate-to-shoehorn](migrate-to-shoehorn/SKILL.md): `as`-Type-Assertions in Tests nach `@total-typescript/shoehorn` migrieren.
 - [tdd](tdd/SKILL.md): test-first red-green-refactor fur Features, Bugfixes, Refactorings und Verhaltensaenderungen.
 
@@ -104,9 +106,7 @@ Danach kannst du natürlich formulieren:
 - [ai-elements](ai-elements/SKILL.md): AI-Chat-UI-Komponenten für die Bibliothek `ai-elements` erstellen.
 - [huashu-design](huashu-design/SKILL.md): Hochwertige HTML-Prototypen, interaktive Demos, Foliendecks, Motion Design, Designvarianten, Videoexports und Designkritiken erstellen.
 - [imagegen-frontend-web](imagegen-frontend-web/SKILL.md): Premium-Frontend-Referenzbilder erzeugen, ein horizontales Bild pro Section.
-- [gpt-taste](gpt-taste/SKILL.md): AIDA-strukturierte, motion-reiche Frontend-Seiten mit randomisierten Layouts und GSAP-Patterns bauen.
 - [better-icons](better-icons/SKILL.md): SVG-Icons aus mehr als 200 Iconify-Bibliotheken per CLI oder MCP suchen, durchsuchen und abrufen.
-- [diagram-design](diagram-design/SKILL.md): markengerechte Editorial-Diagramme als eigenstaendiges HTML/SVG/PNG — Architektur, Flowchart, Sequenz und 36 weitere Typen. draw.io oder Mermaid neu zeichnen.
 
 ### Utilities und Content-Erstellung
 
@@ -121,7 +121,6 @@ Danach kannst du natürlich formulieren:
 - Einige Skills setzen voraus, dass `gh` installiert und authentifiziert ist.
 - Browser-orientierte Skills können eine Chrome/CDP-fähige Umgebung erfordern.
 - Skills für Dokumentationsrecherche können von externen CLIs oder MCP-Tools abhängen; Details stehen jeweils in `SKILL.md`.
-- diagram-design PNG-Export braucht Playwright und Chromium: `pip install playwright && playwright install chromium`.
 
 ## Vollständiger Skill-Index
 
@@ -141,21 +140,21 @@ Danach kannst du natürlich formulieren:
 | [browser-trace](browser-trace/SKILL.md)                             | CDP-Traces, Screenshots und DOM-Dumps für Browser-Automation-Debugging erfassen.                                                                                     | [browserbase/skills](https://github.com/browserbase/skills/tree/main/skills/browser-trace)                                     |
 | [diagnosing-bugs](diagnosing-bugs/SKILL.md)                                   | Disziplinierte Diagnose-Schleife fuer schwierige Bugs und Performance-Regressionen.                                                                 | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/diagnosing-bugs)                                |
 | [deep-research](deep-research/SKILL.md)                                       | Professionelle Deep-Research-Berichte mit paralleler Multi-Agenten-Erstellung, aktuellen Daten, Mehrsprachigkeit und integrierten Qualitätsprüfungen. | [hoolulu/deep-research](https://github.com/hoolulu/deep-research/tree/main)                                                        |
-| [diagram-design](diagram-design/SKILL.md)                           | Markengerechte Editorial-Diagramme als HTML/SVG/PNG (39 Typen). draw.io oder Mermaid neu zeichnen.                                                               | [cathrynlavery/diagram-design](https://github.com/cathrynlavery/diagram-design/tree/main/skills/diagram-design)                 |
 | [find-docs](find-docs/SKILL.md)                                     | Die Context7 CLI für aktuelle Dokumentation, API-Referenzen und Codebeispiele verwenden.                                                                                                                          | [upstash/context7](https://github.com/upstash/context7/tree/master/skills/find-docs)                                           |
 | [exa-search](exa-search/SKILL.md)                                   | Exa für Web-, Code- und Unternehmensrecherche verwenden.                                                                                                                                                           | Custom                                                                                                                         |
+| [reverse-engineer-anything](reverse-engineer-anything/SKILL.md) | Untersucht ausgelieferte Anwendungen und Binärdateien, wenn der Quellcode ihr Verhalten nicht erklärt; nutzt REAs CLI/MCP, um Belege zu sammeln und Versionen zu vergleichen. | [morluto/rea](https://github.com/morluto/rea/tree/main/.agents/skills/reverse-engineer-anything) |
 | [find-skills](find-skills/SKILL.md)                                 | Vorhandene Skills entdecken, wenn Benutzer spezialisierte Fähigkeiten benötigen.                                                                                                                                   | [vercel-labs/skills](https://github.com/vercel-labs/skills/tree/main/skills/find-skills)                                       |
 | [huashu-design](huashu-design/SKILL.md)                           | Hochwertige HTML-Prototypen, interaktive Demos, Foliendecks, Motion Design, Designvarianten, Videoexports und Designkritiken erstellen.                                                       | [alchaincyf/huashu-design](https://github.com/alchaincyf/huashu-design)                                                       |
 | [imagegen-frontend-web](imagegen-frontend-web/SKILL.md) | Premium-Frontend-Referenzbilder erzeugen, ein horizontales Bild pro Section. | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/main/skills/imagegen-frontend-web) |
-| [gpt-taste](gpt-taste/SKILL.md) | AIDA-strukturierte, motion-reiche Frontend-Seiten mit randomisierten Layouts und GSAP-Patterns bauen. | [Leonxlnx/taste-skill](https://github.com/Leonxlnx/taste-skill/tree/main/skills/gpt-tasteskill) |
 | [get-api-docs](get-api-docs/SKILL.md)                               | Aktuelle Dokumentation zu APIs oder SDKs von Drittanbietern abrufen, bevor Code geschrieben wird.                                                                                                                  | [andrewyng/context-hub](https://github.com/andrewyng/context-hub/tree/main/cli/skills/get-api-docs)                            |
 | [grilling](grilling/SKILL.md)                               | Wiederverwendbare Design-Tree Interview-Schleife fuer direkte Grill-Sessions.                                         | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/grilling)                                |
 | [teach](teach/SKILL.md) | Vermittelt Skills oder Konzepte in einem stateful Workspace mit Mission, Ressourcen, Lessons und Learning Records. | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/productivity/teach) |
-| [domain-modeling](domain-modeling/SKILL.md)                   | Build and sharpen project domain terminology, `CONTEXT.md`, and ADRs.                                                                                         | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/domain-modeling)                          |
+| [domain-modeling](domain-modeling/SKILL.md)                   | Build and sharpen project domain terminology, `GLOSSARY.md`, and ADRs.                                                                                         | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/domain-modeling)                          |
 | [codebase-design](codebase-design/SKILL.md)                   | Shared deep-module vocabulary for seams, interfaces, leverage, locality, and testability.                                                                                         | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/codebase-design)                          |
 | [improve-codebase-architecture](improve-codebase-architecture/SKILL.md) | Architektur-Deepening-Chancen finden, die Locality, Leverage, Testbarkeit und AI-Navigation verbessern.                                                                                                           | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/improve-codebase-architecture)                              |
 | [prototype](prototype/SKILL.md) | Baut Throwaway-Logik- oder UI-Prototypen, um Designfragen schnell zu beantworten. | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/engineering/prototype) |
 | [karpathy-guidelines](karpathy-guidelines/SKILL.md)                 | Coding-Verhaltensregeln gegen Overengineering, versteckte Annahmen und nicht verifizierbare Änderungen.                                                                                                           | [forrestchang/andrej-karpathy-skills](https://github.com/forrestchang/andrej-karpathy-skills/tree/main/skills/karpathy-guidelines)               |
+| [ponytail](ponytail/SKILL.md) | YAGNI anwenden, vorhandenen Code wiederverwenden und Standardbibliothek sowie native Plattformfunktionen bevorzugen; mit den Modi lite, full und ultra. | [DietrichGebert/ponytail](https://github.com/DietrichGebert/ponytail/tree/main/skills/ponytail) |
 | [migrate-to-shoehorn](migrate-to-shoehorn/SKILL.md)                 | Testdateien von `as`-Type-Assertions zu `@total-typescript/shoehorn` migrieren.                                                                                                                                   | [mattpocock/skills](https://github.com/mattpocock/skills/tree/main/skills/misc/migrate-to-shoehorn)                                        |
 | [opencli](opencli/opencli-usage/SKILL.md)                                         | Websites mit wiederverwendeter Browser-Session, Public APIs und KI-generierten Adaptern in CLI-Befehle verwandeln.                                                                                                 | [jackwener/opencli](https://github.com/jackwener/opencli/tree/main/skills)                                                                      |
 | [planning-with-files](planning-with-files/SKILL.md)                 | Dateibasierte Planung für komplexe Aufgaben mit `task_plan.md`, `findings.md` und `progress.md`.                                                                                                                   | [OthmanAdi/planning-with-files](https://github.com/OthmanAdi/planning-with-files/tree/master/.codex/skills/planning-with-files)   |
